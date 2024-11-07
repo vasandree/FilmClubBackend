@@ -1,0 +1,11 @@
+@FilmClub_HostAddress = http://localhost:5122
+
+GET {{FilmClub_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{FilmClub_HostAddress}}/todos/1
+Accept: application/json
+
+###

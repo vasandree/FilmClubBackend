@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "AN746/9n6lE=",
+  "success": true,
+  "projectFilePath": "/Users/andreivasilev/Desktop/FilmClubBackend/FilmClub/FilmClub.csproj",
+  "expectedPackageFiles": [
+    "/Users/andreivasilev/.nuget/packages/microsoft.dotnet.ilcompiler/9.0.0-rc.1.24431.7/microsoft.dotnet.ilcompiler.9.0.0-rc.1.24431.7.nupkg.sha512",
+    "/Users/andreivasilev/.nuget/packages/microsoft.net.illink.tasks/9.0.0-rc.1.24431.7/microsoft.net.illink.tasks.9.0.0-rc.1.24431.7.nupkg.sha512",
+    "/Users/andreivasilev/.nuget/packages/runtime.osx-arm64.microsoft.dotnet.ilcompiler/9.0.0-rc.1.24431.7/runtime.osx-arm64.microsoft.dotnet.ilcompiler.9.0.0-rc.1.24431.7.nupkg.sha512"
+  ],
+  "logs": []
+}

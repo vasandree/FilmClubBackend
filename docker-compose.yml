@@ -1,0 +1,6 @@
+﻿services:
+  filmclub:
+    image: filmclub
+    build:
+      context: .
+      dockerfile: FilmClub/Dockerfile
