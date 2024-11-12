@@ -1,6 +1,6 @@
 ﻿services:
-  filmclub:
-    image: filmclub
+  userservice.presentation:
+    image: userservice.presentation
     build:
       context: .
-      dockerfile: FilmClub/Dockerfile
+      dockerfile: UserService.Presentation/Dockerfile
