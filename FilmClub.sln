@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8C81FE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Models", "Common.Models\Common.Models.csproj", "{BB4204B6-8140-4515-A79F-125D2D68827B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Infrastructure", "Common.Infrastructure\Common.Infrastructure.csproj", "{AA81A8BC-A3B4-4C77-A623-D8585095D9C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Persistence", "Common.Persistence\Common.Persistence.csproj", "{AA81A8BC-A3B4-4C77-A623-D8585095D9C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,18 +1,19 @@
 {
   "format": 1,
   "restore": {
-    "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Application/UserService.Application.csproj": {}
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj": {}
   },
   "projects": {
-    "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Application/UserService.Application.csproj": {
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Application/UserService.Application.csproj",
+        "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj",
         "projectName": "UserService.Application",
-        "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Application/UserService.Application.csproj",
+        "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj",
         "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-        "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Application/obj/",
+        "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/obj/",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
         ],

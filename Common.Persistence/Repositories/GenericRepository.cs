@@ -1,10 +1,11 @@
 using System.Linq.Expressions;
 using Common.Models;
+using Common.Persistence.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Common.Infrastructure.GenericRepository;
+namespace Common.Persistence.Repositories;
 
-public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
+public class GenericRepository<T> : IGenericRepository<T> where T : class
 {
     private readonly DbContext _context;
     private readonly DbSet<T> _dbSet;
@@ -14,12 +15,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
         _context = context;
         _dbSet = context.Set<T>();
     }
-
-    public async Task<T?> GetByIdAsync(Guid id)
-    {
-        return await _dbSet.FirstOrDefaultAsync(x => x.Id == id);
-    }
-
+    
     public async Task<IEnumerable<T>?> GetAllAsync()
     {
         return await _dbSet.AsNoTracking().ToListAsync();
@@ -46,17 +42,5 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
     {
         return await _dbSet.AsNoTracking().Where(predicate).ToListAsync();
-    }
-
-    public Task<bool> ExistsAsync(Guid id)
-    {
-        return _dbSet.AnyAsync(x => x.Id == id);
-    }
-
-    public async Task SoftDeleteAsync(T entity)
-    {
-        entity.IsDeleted = true;
-        _context.Entry(entity).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
     }
 }

@@ -582,12 +582,13 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Infrastructure/Common.Infrastructure.csproj",
-      "projectName": "Common.Infrastructure",
-      "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Infrastructure/Common.Infrastructure.csproj",
+      "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/Common.Persistence.csproj",
+      "projectName": "Common.Persistence",
+      "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/Common.Persistence.csproj",
       "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-      "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Infrastructure/obj/",
+      "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/obj/",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
       ],
@@ -602,8 +603,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj": {
-              "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj"
+            "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj": {
+              "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj"
             }
           }
         }

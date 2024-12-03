@@ -13,12 +13,13 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Infrastructure/UserService.Infrastructure.csproj",
+      "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/UserService.Infrastructure.csproj",
       "projectName": "UserService.Infrastructure",
-      "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Infrastructure/UserService.Infrastructure.csproj",
+      "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/UserService.Infrastructure.csproj",
       "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-      "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Infrastructure/obj/",
+      "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/obj/",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
       ],

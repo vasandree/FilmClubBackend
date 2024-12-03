@@ -4,5 +4,10 @@ public enum Role
 {
     Admin,
     Manager,
-    DiscussionMember
+    GroupAdmin,
+    GroupMember,
+    GroupManager,
+    DiscussionAdmin,
+    DiscussionMember,
+    DiscussionManager,
 }

@@ -13,12 +13,13 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj",
+      "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj",
       "projectName": "Common.Models",
-      "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj",
+      "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj",
       "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-      "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/obj/",
+      "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
       ],
