@@ -23,26 +23,35 @@ public class DbInitializer : IDbInitializer
         _roleManager = roleManager;
     }
 
-    public void Initialize()
+    public async Task InitializeAsync()
     {
         try
         {
-            if (_context.Database.GetPendingMigrations().Any())
-                _context.Database.Migrate();
+            if ((await _context.Database.GetPendingMigrationsAsync()).Any())
+            {
+                await _context.Database.MigrateAsync();
+            }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            //todo: add logging
+            // TODO: Add proper logging here
+            Console.WriteLine($"Error during migration: {ex.Message}");
         }
 
-        InitializeRoles();
-        InitializeAdmin();
+        await InitializeRolesAsync();
+        await InitializeAdminAsync();
     }
 
-    private void InitializeAdmin()
+    private async Task InitializeAdminAsync()
     {
         var adminConfig = _configuration.GetSection("AdminConfig").Get<AdminConfig>();
-        var existingAdmin = _userManager.FindByEmailAsync(adminConfig.Email).GetAwaiter().GetResult();
+        if (adminConfig == null)
+        {
+            Console.WriteLine("Admin configuration is missing.");
+            return;
+        }
+
+        var existingAdmin = await _userManager.FindByEmailAsync(adminConfig.Email);
 
         if (existingAdmin != null) return;
 
@@ -52,28 +61,51 @@ public class DbInitializer : IDbInitializer
             Email = adminConfig.Email,
             UserName = adminConfig.UserName
         };
-        var createUserResult = _userManager.CreateAsync(adminUser, adminConfig.Password).GetAwaiter().GetResult();
+
+        var createUserResult = await _userManager.CreateAsync(adminUser, adminConfig.Password);
+
         if (createUserResult.Succeeded)
         {
-            _userManager.AddToRoleAsync(adminUser, "Admin").GetAwaiter().GetResult();
+            var addToRoleResult = await _userManager.AddToRoleAsync(adminUser, "Admin");
+            if (!addToRoleResult.Succeeded)
+            {
+                Console.WriteLine("Failed to assign 'Admin' role to the admin user.");
+                foreach (var error in addToRoleResult.Errors)
+                {
+                    Console.WriteLine($"Error: {error.Description}");
+                }
+                // TODO: Add proper logging here
+            }
         }
         else
         {
+            Console.WriteLine("Failed to create admin user.");
             foreach (var error in createUserResult.Errors)
-                Console.WriteLine($"Error creating admin user: {error.Description}");
-            //todo: add logging
+            {
+                Console.WriteLine($"Error: {error.Description}");
+            }
+            // TODO: Add proper logging here
         }
     }
 
-    private void InitializeRoles()
+    private async Task InitializeRolesAsync()
     {
         foreach (var role in Enum.GetValues(typeof(Role)).Cast<Role>())
         {
             var roleName = role.ToString();
 
-            if (!_roleManager.RoleExistsAsync(roleName).GetAwaiter().GetResult())
+            if (!await _roleManager.RoleExistsAsync(roleName))
             {
-                _roleManager.CreateAsync(new IdentityRole<Guid>(roleName)).GetAwaiter().GetResult();
+                var result = await _roleManager.CreateAsync(new IdentityRole<Guid>(roleName));
+                if (!result.Succeeded)
+                {
+                    Console.WriteLine($"Failed to create role '{roleName}'.");
+                    foreach (var error in result.Errors)
+                    {
+                        Console.WriteLine($"Error: {error.Description}");
+                    }
+                    // TODO: Add proper logging here
+                }
             }
         }
     }
