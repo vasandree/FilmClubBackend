@@ -7,6 +7,11 @@ namespace UserService.Persistence;
 
 public class UserDbContext: IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
 {
+    public UserDbContext(DbContextOptions<UserDbContext> options)
+        : base(options)
+    {
+    }
+    
     public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     public DbSet<RefreshToken> RefreshTokens { get; set; }
     
@@ -28,7 +33,6 @@ public class UserDbContext: IdentityDbContext<ApplicationUser, IdentityRole<Guid
             .HasIndex(u => u.Email).IsUnique();
         
         modelBuilder.Entity<ApplicationUser>()
-            .HasIndex(u => u.Username).IsUnique();
-        
+            .HasIndex(u => u.UserName).IsUnique();
     }
 }

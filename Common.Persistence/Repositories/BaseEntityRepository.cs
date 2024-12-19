@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Common.Persistence.Repositories;
 
-public class BaseEntityRepository: GenericRepository<BaseEntity>, IBaseEntityRepository
+public class BaseEntityRepository<T>: GenericRepository<T>, IBaseEntityRepository<T> where T : BaseEntity
 {
     private readonly DbContext _context;
     private readonly DbSet<BaseEntity> _dbSet;
     
-    public BaseEntityRepository(DbContext context, DbSet<BaseEntity> dbSet) : base(context)
+    public BaseEntityRepository(DbContext context) : base(context)
     {
         _context = context;
-        _dbSet = dbSet;
+        _dbSet = context.Set<BaseEntity>();
     }
 
     public async Task<BaseEntity?> GetByIdAsync(Guid id)

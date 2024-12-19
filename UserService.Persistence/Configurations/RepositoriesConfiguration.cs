@@ -12,7 +12,7 @@ public static class RepositoriesConfiguration
     public static void ConfigureRepositories(this WebApplicationBuilder builder)
     {
         builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-        builder.Services.AddTransient(typeof(IBaseEntityRepository), typeof(BaseEntityRepository));
+        builder.Services.AddTransient(typeof(IBaseEntityRepository<>), typeof(BaseEntityRepository<>));
         builder.Services.AddTransient<IApplicationUserRepository, ApplicationUserRepository>();
         builder.Services.AddTransient<IRefreshTokenRepository, RefreshTokenRepository>();
     }

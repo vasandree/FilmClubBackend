@@ -6,11 +6,7 @@ namespace UserService.Domain.Entities;
 
 public class ApplicationUser: IdentityUser<Guid>
 {
-    [Required] 
-    public string Username { get; set; }
-
-    [Required] 
-    public string FullName { get; set; }
+    public string? FullName { get; set; }
 
     public DateTime? BirthDate { get; set; }
     
@@ -19,6 +15,8 @@ public class ApplicationUser: IdentityUser<Guid>
     public bool IsBanned { get; set; } = false;
     
     public bool IsDeleted { get; set; } = false;
+    
+    public bool RememberMe { get; set; } 
     
     public ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
 }

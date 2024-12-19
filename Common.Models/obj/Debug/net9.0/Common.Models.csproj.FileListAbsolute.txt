@@ -1,0 +1,12 @@
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/bin/Debug/net9.0/Common.Models.deps.json
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/bin/Debug/net9.0/Common.Models.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/bin/Debug/net9.0/Common.Models.pdb
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/Debug/net9.0/Common.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/Debug/net9.0/Common.Models.AssemblyInfoInputs.cache
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/Debug/net9.0/Common.Models.AssemblyInfo.cs
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/Debug/net9.0/Common.Models.csproj.CoreCompileInputs.cache
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/Debug/net9.0/Common.Models.sourcelink.json
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/Debug/net9.0/Common.Models.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/Debug/net9.0/refint/Common.Models.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/Debug/net9.0/Common.Models.pdb
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/Debug/net9.0/ref/Common.Models.dll
