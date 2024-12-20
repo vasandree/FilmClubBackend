@@ -1,3 +1,4 @@
+using Common.Configurations.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using UserService.Application.Features.Queries.GetUser;
 namespace UserService.Presentation.Controllers;
 
 [Authorize]
+[ValidateSession]
 [Route("profile")]
 public class ProfileController : ControllerBase
 {

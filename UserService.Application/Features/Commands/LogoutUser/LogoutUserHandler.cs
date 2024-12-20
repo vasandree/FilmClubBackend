@@ -1,6 +1,6 @@
 using Common.Models.Models.Exceptions;
+using Common.Services.RedisDbService;
 using MediatR;
-using UserService.Application.Services.RedisDbService;
 using UserService.Domain.Interfaces;
 
 namespace UserService.Application.Features.Commands.LogoutUser;
@@ -28,7 +28,7 @@ public class LogoutUserHandler: IRequestHandler<LogoutUserCommand, Unit>
         
         await _refreshTokenRepository.DeleteByStringAsync(request.RefreshToken);
         
-        await _redisSessionService.DeleteTokenAsync(request.UserId);
+        await _redisSessionService.DeleteSessionAsync(request.UserId, request.SessionId);
         return Unit.Value;
     }
 }

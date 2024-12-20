@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.ConfigureUserDb();
 
+builder.ConfigureRedisDb();
+
 builder.ConfigureRepositories();
 
 builder.ConfigureUserServiceApplication();
@@ -18,7 +20,7 @@ builder.ConfigureSwagger();
 
 var app = builder.Build();
 
-app.ConfigureUserDb();
+await app.ConfigureUserDb();
 
 if (app.Environment.IsDevelopment())
 {

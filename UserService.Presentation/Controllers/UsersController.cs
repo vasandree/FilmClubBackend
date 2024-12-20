@@ -1,3 +1,4 @@
+using Common.Configurations.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,7 @@ public class UsersController : ControllerBase
     }
 
     [Authorize]
+    [ValidateSession]
     [HttpGet("users/{userId}")]
     public async Task<IActionResult> GetUser([FromRoute] Guid userId)
     {

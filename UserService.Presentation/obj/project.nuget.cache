@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qMdsyhUK1UY=",
+  "dgSpecHash": "rP/5dxYpN1c=",
   "success": true,
   "projectFilePath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/UserService.Presentation.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.caching.memory/9.0.0/microsoft.extensions.caching.memory.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.configuration/9.0.0/microsoft.extensions.configuration.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
+    "/Users/andreivasilev/.nuget/packages/microsoft.extensions.configuration.binder/9.0.0/microsoft.extensions.configuration.binder.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.dependencymodel/9.0.0/microsoft.extensions.dependencymodel.9.0.0.nupkg.sha512",

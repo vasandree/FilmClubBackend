@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "L77U+07UifA=",
+  "dgSpecHash": "A71TD1/HFUA=",
   "success": true,
   "projectFilePath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj",
   "expectedPackageFiles": [
@@ -18,6 +18,7 @@
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.caching.abstractions/9.0.0/microsoft.extensions.caching.abstractions.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.caching.memory/9.0.0/microsoft.extensions.caching.memory.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
+    "/Users/andreivasilev/.nuget/packages/microsoft.extensions.configuration.binder/9.0.0/microsoft.extensions.configuration.binder.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
     "/Users/andreivasilev/.nuget/packages/microsoft.extensions.identity.core/9.0.0/microsoft.extensions.identity.core.9.0.0.nupkg.sha512",

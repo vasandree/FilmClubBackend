@@ -8,11 +8,13 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+      <PackageReference Include="StackExchange.Redis" Version="2.8.22" />
       <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Common.Persistence\Common.Persistence.csproj" />
+      <ProjectReference Include="..\Common.Services\Common.Services.csproj" />
     </ItemGroup>
 
 </Project>

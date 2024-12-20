@@ -1,3 +1,4 @@
+using Common.Configurations.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -31,11 +32,12 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> LoginUser([FromBody] LoginUserDto loginUserDto)
     {
-        return Ok(await _mediator.Send(
-            new CreateTokensCommand(await _mediator.Send(new LoginUserCommand(loginUserDto)))));
+        var userId = await _mediator.Send(new LoginUserCommand(loginUserDto));
+        return Ok(await _mediator.Send(new CreateTokensCommand(userId)));
     }
 
     [Authorize]
+    [ValidateSession]
     [HttpPost("refresh")]
     public async Task<IActionResult> RefreshToken([FromBody] string? refreshToken)
     {
@@ -44,9 +46,11 @@ public class AuthController : ControllerBase
     }
 
     [Authorize]
+    [ValidateSession]
     [HttpPost("logout")]
     public async Task<IActionResult> LogoutUser([FromBody] string? token)
     {
-        return Ok(await _mediator.Send(new LogoutUserCommand(Guid.Parse(User.FindFirst("UserId")!.Value!), token)));
+        return Ok(await _mediator.Send(new LogoutUserCommand(User.FindFirst("SessionId")!.Value,
+            Guid.Parse(User.FindFirst("UserId")!.Value!), token)));
     }
 }

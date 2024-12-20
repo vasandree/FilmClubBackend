@@ -16,13 +16,14 @@ public class JwtService : IJwtService
         _config = config;
     }
 
-    public string GenerateTokenString(string email,string username, Guid id)
+    public string GenerateTokenString(string email,string username, Guid userId, string sessionId)
     {
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Email,email),
             new Claim("Username", username),
-            new Claim("UserId", id.ToString())
+            new Claim("UserId", userId.ToString()),
+            new Claim("SessionId", sessionId)
         };
 
         var staticKey = _config.GetSection("Jwt:Key").Value;

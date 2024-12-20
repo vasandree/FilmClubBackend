@@ -16,3 +16,5 @@
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/obj/Debug/net9.0/refint/Common.Configurations.dll
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/obj/Debug/net9.0/Common.Configurations.pdb
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/obj/Debug/net9.0/ref/Common.Configurations.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/bin/Debug/net9.0/Common.Services.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/bin/Debug/net9.0/Common.Services.pdb

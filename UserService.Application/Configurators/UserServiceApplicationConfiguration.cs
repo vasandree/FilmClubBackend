@@ -1,10 +1,9 @@
 using System.Reflection;
+using Common.Services.RedisDbService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using StackExchange.Redis;
 using UserService.Application.Mappers;
 using UserService.Application.Services.JwtService;
-using UserService.Application.Services.RedisDbService;
 
 namespace UserService.Application.Configurators;
 

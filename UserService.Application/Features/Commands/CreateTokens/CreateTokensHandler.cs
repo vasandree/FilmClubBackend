@@ -1,9 +1,9 @@
 using Common.Models.Models.Exceptions;
+using Common.Services.RedisDbService;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using UserService.Application.Dtos.Responses;
 using UserService.Application.Services.JwtService;
-using UserService.Application.Services.RedisDbService;
 using UserService.Domain.Entities;
 using UserService.Domain.Interfaces;
 
@@ -35,7 +35,9 @@ public class CreateTokensHandler : IRequestHandler<CreateTokensCommand, TokensDt
 
         var user = await _applicationUserRepository.GetByIdAsync(request.UserId);
 
-        var authToken = _jwtService.GenerateTokenString(user.Email!, user.UserName, user.Id);
+        var sessionId = Guid.NewGuid().ToString();
+
+        var authToken = _jwtService.GenerateTokenString(user.Email!, user.UserName, user.Id, sessionId);
         string? refreshToken = null;
 
         if (user.RememberMe)
@@ -56,7 +58,7 @@ public class CreateTokensHandler : IRequestHandler<CreateTokensCommand, TokensDt
             await _refreshTokenRepository.DeleteByStringAsync(request.RefreshToken);
         }
 
-        await _redisSessionService.StoreTokenAsync(user.Id, authToken);
+        await _redisSessionService.StoreSessionAsync(user.Id, sessionId, authToken);
 
         return new TokensDto(authToken, refreshToken);
     }

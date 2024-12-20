@@ -13,9 +13,6 @@ public static class DbContextConfiguration
     {
         builder.Services.AddDbContext<UserDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("UserDb")));
-
-        builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
-            ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")!));
         
         builder.Services.AddScoped<IDbInitializer, DbInitializer.DbInitializer>();
 

@@ -159,3 +159,6 @@
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/bin/Debug/net9.0/Microsoft.Extensions.Options.dll
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/bin/Debug/net9.0/Common.Services.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/bin/Debug/net9.0/Common.Services.pdb
