@@ -3,6 +3,7 @@ using Common.Services.RedisDbService;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using UserService.Application.Dtos.Responses;
+using UserService.Application.Helpers;
 using UserService.Application.Services.JwtService;
 using UserService.Domain.Entities;
 using UserService.Domain.Interfaces;
@@ -11,6 +12,7 @@ namespace UserService.Application.Features.Commands.CreateTokens;
 
 public class CreateTokensHandler : IRequestHandler<CreateTokensCommand, TokensDto>
 {
+    private readonly IChecker _checker;
     private readonly IJwtService _jwtService;
     private readonly IConfiguration _configuration;
     private readonly IRedisSessionService _redisSessionService;
@@ -19,19 +21,19 @@ public class CreateTokensHandler : IRequestHandler<CreateTokensCommand, TokensDt
 
     public CreateTokensHandler(IJwtService jwtService, IConfiguration configuration,
         IRefreshTokenRepository refreshTokenRepository, IRedisSessionService redisSessionService,
-        IApplicationUserRepository applicationUserRepository)
+        IApplicationUserRepository applicationUserRepository, IChecker checker)
     {
         _jwtService = jwtService;
         _configuration = configuration;
         _refreshTokenRepository = refreshTokenRepository;
         _redisSessionService = redisSessionService;
         _applicationUserRepository = applicationUserRepository;
+        _checker = checker;
     }
 
     public async Task<TokensDto> Handle(CreateTokensCommand request, CancellationToken cancellationToken)
     {
-        if (!await _applicationUserRepository.ExistsAsync(request.UserId))
-            throw new BadRequest($"User with id: {request.UserId} does not exist");
+        await _checker.CheckUserExistsAsync(request.UserId);
 
         var user = await _applicationUserRepository.GetByIdAsync(request.UserId);
 
@@ -52,8 +54,7 @@ public class CreateTokensHandler : IRequestHandler<CreateTokensCommand, TokensDt
 
         if (request.RefreshToken != null)
         {
-            if (!await _refreshTokenRepository.ExistsAsync(request.RefreshToken))
-                throw new BadRequest("Provided refresh token does not exist.");
+            await _checker.CheckRefreshTokenExistsAsync(request.RefreshToken);
 
             await _refreshTokenRepository.DeleteByStringAsync(request.RefreshToken);
         }

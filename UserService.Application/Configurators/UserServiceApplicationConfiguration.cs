@@ -2,6 +2,7 @@ using System.Reflection;
 using Common.Services.RedisDbService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using UserService.Application.Helpers;
 using UserService.Application.Mappers;
 using UserService.Application.Services.JwtService;
 
@@ -15,6 +16,6 @@ public static class UserServiceApplicationConfiguration
         builder.Services.AddAutoMapper(typeof(MappingProfile));
         builder.Services.AddScoped<IJwtService, JwtService>();
         builder.Services.AddScoped<IRedisSessionService, RedisSessionService>();
-
+        builder.Services.AddScoped<IChecker, Checker>();
     }
 }

@@ -15,13 +15,9 @@ public class UsersController : ControllerBase
         _mediator = mediator;
     }
 
-    [Authorize]
-    [ValidateSession]
     [HttpGet("users/{userId}")]
     public async Task<IActionResult> GetUser([FromRoute] Guid userId)
     {
         return Ok(await _mediator.Send(new GetUserCommand(userId)));
     }
-    
-    
 }

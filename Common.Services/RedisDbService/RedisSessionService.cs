@@ -1,6 +1,5 @@
 using Microsoft.Extensions.Configuration;
 using StackExchange.Redis;
-using System.Text.Json;
 
 namespace Common.Services.RedisDbService;
 
