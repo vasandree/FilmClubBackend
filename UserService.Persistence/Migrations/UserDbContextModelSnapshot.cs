@@ -152,6 +152,16 @@ namespace UserService.Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("UserService.Domain.Entities.AdminEntity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Admins");
+                });
+
             modelBuilder.Entity("UserService.Domain.Entities.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
@@ -241,6 +251,110 @@ namespace UserService.Persistence.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("UserService.Domain.Entities.ConfirmCode", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("UserId", "Code");
+
+                    b.ToTable("ConfirmCodes");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.DiscussionAdminEntity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ResourceId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId", "ResourceId");
+
+                    b.ToTable("DiscussionAdmins");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.DiscussionManagerEntity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ResourceId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId", "ResourceId");
+
+                    b.ToTable("DiscussionManagers");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.DiscussionMemberEntity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ResourceId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId", "ResourceId");
+
+                    b.ToTable("DiscussionMembers");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.GroupAdminEntity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ResourceId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId", "ResourceId");
+
+                    b.ToTable("GroupAdmins");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.GroupManagerEntity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ResourceId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId", "ResourceId");
+
+                    b.ToTable("GroupManagers");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.GroupMemberEntity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ResourceId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId", "ResourceId");
+
+                    b.ToTable("GroupMembers");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.ManagerEntity", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Managers");
+                });
+
             modelBuilder.Entity("UserService.Domain.Entities.RefreshToken", b =>
                 {
                     b.Property<Guid>("Id")
@@ -318,6 +432,105 @@ namespace UserService.Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("UserService.Domain.Entities.AdminEntity", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithOne("Admin")
+                        .HasForeignKey("UserService.Domain.Entities.AdminEntity", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.ConfirmCode", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.DiscussionAdminEntity", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithMany("DiscussionAdmin")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.DiscussionManagerEntity", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithMany("DiscussionManager")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.DiscussionMemberEntity", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithMany("DiscussionMember")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.GroupAdminEntity", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithMany("GroupAdmin")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.GroupManagerEntity", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithMany("GroupManager")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.GroupMemberEntity", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithMany("GroupMember")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserService.Domain.Entities.ManagerEntity", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithOne("Manager")
+                        .HasForeignKey("UserService.Domain.Entities.ManagerEntity", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("UserService.Domain.Entities.RefreshToken", b =>
                 {
                     b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
@@ -331,6 +544,22 @@ namespace UserService.Persistence.Migrations
 
             modelBuilder.Entity("UserService.Domain.Entities.ApplicationUser", b =>
                 {
+                    b.Navigation("Admin");
+
+                    b.Navigation("DiscussionAdmin");
+
+                    b.Navigation("DiscussionManager");
+
+                    b.Navigation("DiscussionMember");
+
+                    b.Navigation("GroupAdmin");
+
+                    b.Navigation("GroupManager");
+
+                    b.Navigation("GroupMember");
+
+                    b.Navigation("Manager");
+
                     b.Navigation("RefreshTokens");
                 });
 #pragma warning restore 612, 618

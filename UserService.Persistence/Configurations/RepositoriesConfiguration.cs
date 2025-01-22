@@ -15,5 +15,6 @@ public static class RepositoriesConfiguration
         builder.Services.AddTransient(typeof(IBaseEntityRepository<>), typeof(BaseEntityRepository<>));
         builder.Services.AddTransient<IApplicationUserRepository, ApplicationUserRepository>();
         builder.Services.AddTransient<IRefreshTokenRepository, RefreshTokenRepository>();
+        builder.Services.AddTransient<IBaseMembershipEntityRepository, BaseMembershipEntityRepository>();
     }
 }

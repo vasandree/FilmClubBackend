@@ -3,6 +3,7 @@ using Common.Services.RedisDbService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using UserService.Application.Helpers;
+using UserService.Application.Helpers.RoleHelper;
 using UserService.Application.Mappers;
 using UserService.Application.Services.JwtService;
 
@@ -17,5 +18,6 @@ public static class UserServiceApplicationConfiguration
         builder.Services.AddScoped<IJwtService, JwtService>();
         builder.Services.AddScoped<IRedisSessionService, RedisSessionService>();
         builder.Services.AddScoped<IChecker, Checker>();
+        builder.Services.AddScoped<IRoleHelper, RoleHelper>();
     }
 }

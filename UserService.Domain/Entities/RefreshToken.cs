@@ -21,16 +21,5 @@ public class RefreshToken
 
     [Required]
     public ApplicationUser User { get; set; }
-
-    public RefreshToken(ApplicationUser user, string? token, DateTime expirationDate)
-    {
-        User = user ?? throw new ArgumentNullException(nameof(user));
-        UserId = user.Id;
-        Token = token;
-        ExpireTime = expirationDate;
-    }
-
-    public RefreshToken()
-    {
-    }
+    
 }
