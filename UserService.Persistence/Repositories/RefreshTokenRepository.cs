@@ -30,8 +30,20 @@ public class RefreshTokenRepository : IRefreshTokenRepository
         await _context.SaveChangesAsync();
     }
 
+    public async Task DeleteByStringAsync(string? refreshToken)
+    {
+        var refreshTokens = await _context.RefreshTokens.FirstOrDefaultAsync(r => r.Token == refreshToken);
+        _context.RefreshTokens.Remove(refreshTokens);
+        await _context.SaveChangesAsync();
+    }
+
     public async Task<List<RefreshToken>> GetByUserIdAsync(Guid userId)
     {
         return await _context.RefreshTokens.Where(x => x.UserId == userId).ToListAsync();
+    }
+
+    public async Task<bool> ExistsAsync(string? refreshToken)
+    {
+        return await _context.RefreshTokens.AnyAsync(x => x.Token == refreshToken);
     }
 }

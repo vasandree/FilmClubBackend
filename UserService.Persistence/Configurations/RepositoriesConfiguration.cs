@@ -1,4 +1,5 @@
-using Common.Infrastructure.GenericRepository;
+using Common.Persistence.Interfaces;
+using Common.Persistence.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using UserService.Domain.Interfaces;
@@ -11,9 +12,8 @@ public static class RepositoriesConfiguration
     public static void ConfigureRepositories(this WebApplicationBuilder builder)
     {
         builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        builder.Services.AddTransient(typeof(IBaseEntityRepository<>), typeof(BaseEntityRepository<>));
         builder.Services.AddTransient<IApplicationUserRepository, ApplicationUserRepository>();
-        builder.Services.AddTransient<IRoleRepository, RoleRepository>();
-        builder.Services.AddTransient<IUserRoleRepository, UserRoleRepository>();
         builder.Services.AddTransient<IRefreshTokenRepository, RefreshTokenRepository>();
     }
 }

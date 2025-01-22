@@ -1,0 +1,13 @@
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/bin/Debug/net9.0/Common.Services.deps.json
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/bin/Debug/net9.0/Common.Services.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/bin/Debug/net9.0/Common.Services.pdb
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/Common.Services.csproj.AssemblyReference.cache
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/Common.Services.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/Common.Services.AssemblyInfoInputs.cache
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/Common.Services.AssemblyInfo.cs
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/Common.Services.csproj.CoreCompileInputs.cache
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/Common.Services.sourcelink.json
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/Common.Services.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/refint/Common.Services.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/Common.Services.pdb
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/Debug/net9.0/ref/Common.Services.dll

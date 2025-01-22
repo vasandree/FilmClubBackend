@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Presentation/UserService.Presentation.csproj": {}
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/UserService.Presentation.csproj": {}
   },
   "projects": {
-    "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Infrastructure/Common.Infrastructure.csproj": {
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/Common.Configurations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Infrastructure/Common.Infrastructure.csproj",
-        "projectName": "Common.Infrastructure",
-        "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Infrastructure/Common.Infrastructure.csproj",
+        "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/Common.Configurations.csproj",
+        "projectName": "Common.Configurations",
+        "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/Common.Configurations.csproj",
         "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-        "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Infrastructure/obj/",
+        "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
@@ -20,15 +20,18 @@
           "net9.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.kreosoft.ru/nuget": {}
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj": {
-                "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj"
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/Common.Persistence.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/Common.Persistence.csproj"
+              },
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/Common.Services.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/Common.Services.csproj"
               }
             }
           }
@@ -41,16 +44,25 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        }
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[9.0.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.22, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[7.2.0, )"
             }
           },
           "imports": [
@@ -69,18 +81,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/andreivasilev/.dotnet/sdk/9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj": {
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj",
+        "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj",
         "projectName": "Common.Models",
-        "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj",
+        "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj",
         "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-        "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/obj/",
+        "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
@@ -89,8 +101,8 @@
           "net9.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.kreosoft.ru/nuget": {}
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -106,8 +118,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        }
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -128,18 +141,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/andreivasilev/.dotnet/sdk/9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Domain/UserService.Domain.csproj": {
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/Common.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Domain/UserService.Domain.csproj",
-        "projectName": "UserService.Domain",
-        "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Domain/UserService.Domain.csproj",
+        "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/Common.Persistence.csproj",
+        "projectName": "Common.Persistence",
+        "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/Common.Persistence.csproj",
         "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-        "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Domain/obj/",
+        "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
@@ -148,18 +161,15 @@
           "net9.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.kreosoft.ru/nuget": {}
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Infrastructure/Common.Infrastructure.csproj": {
-                "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Infrastructure/Common.Infrastructure.csproj"
-              },
-              "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj": {
-                "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/Common.Models/Common.Models.csproj"
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj"
               }
             }
           }
@@ -172,12 +182,33 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        }
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -194,18 +225,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/andreivasilev/.dotnet/sdk/9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj": {
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/Common.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj",
-        "projectName": "UserService.Persistence",
-        "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj",
+        "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/Common.Services.csproj",
+        "projectName": "Common.Services",
+        "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/Common.Services.csproj",
         "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-        "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Persistence/obj/",
+        "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
@@ -214,17 +245,13 @@
           "net9.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.kreosoft.ru/nuget": {}
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {
-              "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Domain/UserService.Domain.csproj": {
-                "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Domain/UserService.Domain.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -235,8 +262,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        }
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -244,7 +272,247 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.22, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj",
+        "projectName": "UserService.Application",
+        "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj",
+        "packagesPath": "/Users/andreivasilev/.nuget/packages/",
+        "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/Common.Services.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Services/Common.Services.csproj"
+              },
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Domain/UserService.Domain.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Domain/UserService.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.22, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Domain/UserService.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Domain/UserService.Domain.csproj",
+        "projectName": "UserService.Domain",
+        "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Domain/UserService.Domain.csproj",
+        "packagesPath": "/Users/andreivasilev/.nuget/packages/",
+        "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Models/Common.Models.csproj"
+              },
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/Common.Persistence.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Persistence/Common.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj",
+        "projectName": "UserService.Persistence",
+        "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj",
+        "packagesPath": "/Users/andreivasilev/.nuget/packages/",
+        "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Domain/UserService.Domain.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Domain/UserService.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -254,15 +522,19 @@
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[9.0.2, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.22, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.9.0, )"
+              "version": "[7.2.0, )"
             }
           },
           "imports": [
@@ -281,18 +553,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/andreivasilev/.dotnet/sdk/9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Presentation/UserService.Presentation.csproj": {
+    "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/UserService.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Presentation/UserService.Presentation.csproj",
+        "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/UserService.Presentation.csproj",
         "projectName": "UserService.Presentation",
-        "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Presentation/UserService.Presentation.csproj",
+        "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/UserService.Presentation.csproj",
         "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-        "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Presentation/obj/",
+        "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Presentation/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
@@ -301,15 +573,21 @@
           "net9.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.kreosoft.ru/nuget": {}
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj": {
-                "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj"
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/Common.Configurations.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/Common.Configurations/Common.Configurations.csproj"
+              },
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/UserService.Application.csproj"
+              },
+              "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj": {
+                "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Persistence/UserService.Persistence.csproj"
               }
             }
           }
@@ -322,24 +600,39 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        }
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.DotNet.ILCompiler": {
-              "suppressParent": "All",
+            "MediatR": {
               "target": "Package",
-              "version": "[9.0.0-rc.1.24431.7, )",
-              "autoReferenced": true
+              "version": "[12.4.1, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.0-rc.1.24431.7, )",
-              "autoReferenced": true
+              "version": "[9.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[7.2.0, )"
             }
           },
           "imports": [
@@ -353,12 +646,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "runtime.osx-arm64.Microsoft.DotNet.ILCompiler",
-              "version": "[9.0.0-rc.1.24431.7, 9.0.0-rc.1.24431.7]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -367,7 +654,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/andreivasilev/.dotnet/sdk/9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Infrastructure/UserService.Infrastructure.csproj",
+      "projectUniqueName": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/UserService.Infrastructure.csproj",
       "projectName": "UserService.Infrastructure",
-      "projectPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Infrastructure/UserService.Infrastructure.csproj",
+      "projectPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/UserService.Infrastructure.csproj",
       "packagesPath": "/Users/andreivasilev/.nuget/packages/",
-      "outputPath": "/Users/andreivasilev/Desktop/FilmClubBackend/UserService.Infrastructure/obj/",
+      "outputPath": "/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/andreivasilev/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
         "net9.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.kreosoft.ru/nuget": {}
+        "/usr/local/share/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
@@ -43,8 +43,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
-      }
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -65,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/andreivasilev/.dotnet/sdk/9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,9 @@
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
+using UserService.Persistence.DbInitializer;
 
 namespace UserService.Persistence.Configurations;
 
@@ -10,25 +11,27 @@ public static class DbContextConfiguration
 {
     public static void ConfigureUserDb(this WebApplicationBuilder builder)
     {
-        var connection = builder.Configuration.GetConnectionString("PostgresUser");
         builder.Services.AddDbContext<UserDbContext>(options =>
-            options.UseNpgsql(connection));
+            options.UseNpgsql(builder.Configuration.GetConnectionString("UserDb")));
+        
+        builder.Services.AddScoped<IDbInitializer, DbInitializer.DbInitializer>();
+
     }
 
-    public static void ConfigureUserDb(this WebApplication application)
+    public static async Task ConfigureUserDb(this WebApplication application)
     {
-        using (var scope = application.Services.CreateScope())
-        {
-            var dbContext = scope.ServiceProvider.GetRequiredService<UserDbContext>();
+        using var scope = application.Services.CreateScope();
+        var dbContext = scope.ServiceProvider.GetRequiredService<UserDbContext>();
 
-            try
-            {
-                dbContext.Database.Migrate();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Migration failed: {ex.Message}");
-            }
+        try
+        {
+            await dbContext.Database.MigrateAsync();
+            var initializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+            await initializer.InitializeAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Migration failed: {ex.Message}");
         }
     }
 }

@@ -3,15 +3,34 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UserService.Domain.Entities;
 
-public class RefreshToken(ApplicationUser user, string token, DateTime expirationDate)
+public class RefreshToken
 {
-    [Key] [Required] public Guid Id { get; set; } = Guid.NewGuid();
+    [Key]
+    [Required]
+    public Guid Id { get; set; } = Guid.NewGuid();
 
-    [Required] [ForeignKey("User")] public Guid UserId { get; set; } = user.Id;
+    [Required]
+    [ForeignKey("User")]
+    public Guid UserId { get; set; }
 
-    [Required] public string Token { get; set; } = token;
+    [Required]
+    public string? Token { get; set; }
 
-    [Required] public DateTime ExpireTime { get; set; } = expirationDate;
+    [Required]
+    public DateTime ExpireTime { get; set; }
 
-    [Required] public ApplicationUser User { get; set; } = user;
+    [Required]
+    public ApplicationUser User { get; set; }
+
+    public RefreshToken(ApplicationUser user, string? token, DateTime expirationDate)
+    {
+        User = user ?? throw new ArgumentNullException(nameof(user));
+        UserId = user.Id;
+        Token = token;
+        ExpireTime = expirationDate;
+    }
+
+    public RefreshToken()
+    {
+    }
 }

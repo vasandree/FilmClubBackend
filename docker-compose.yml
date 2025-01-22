@@ -1,6 +1,42 @@
-﻿services:
+﻿version: '3.8'
+services:
   userservice.presentation:
     image: userservice.presentation
     build:
       context: .
       dockerfile: UserService.Presentation/Dockerfile
+    
+    depends_on:
+      - db
+      - redis
+    
+    environment:
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=FilmClubUsers;Username=postgres;Password=post"
+      CacheSettings__RedisHost: "redis"
+      CacheSettings__RedisPort: "6379"   
+    ports:
+      - "5000:80"
+  db:
+    image: postgres:15-alpine
+    container_name: myapp_postgres
+    environment:
+      POSTGRES_USER: myappuser
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: myappdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    container_name: myapp_redis
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+
+volumes:
+  pgdata:
+  redisdata:
