@@ -11,7 +11,7 @@ services:
       - redis
     
     environment:
-      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=myappdb;Username=myappuser;Password=secret"
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=FilmClubUsers;Username=postgres;Password=post"
       CacheSettings__RedisHost: "redis"
       CacheSettings__RedisPort: "6379"   
     ports:
