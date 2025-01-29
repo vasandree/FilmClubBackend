@@ -17,6 +17,8 @@ public class ApplicationUser : IdentityUser<Guid>
     public bool IsDeleted { get; set; } = false;
 
     public bool RememberMe { get; set; }
+    
+    public string? AvatarUrl { get; set; }
 
     public AdminEntity? Admin { get; set; }
 

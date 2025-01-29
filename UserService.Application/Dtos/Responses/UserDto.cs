@@ -6,14 +6,16 @@ namespace UserService.Application.Dtos.Responses;
 
 public class UserDto
 {
-    [Required(ErrorMessage = "User name is required")]
+    [Required]
     [EmailAddress]
     public string Email { get; set; }
 
-    [Required(ErrorMessage = "Username is required")]
+    [Required]
     public string Username { get; set; }
     
     public Gender? Gender { get; set; }
+    
+    public string AvatarUrl { get; set; }
 
     [DateNotInFuture]
     public DateTime? BirthDate { get; set; }

@@ -20,3 +20,5 @@
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/obj/Debug/net9.0/ref/UserService.Application.dll
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/bin/Debug/net9.0/Common.Services.dll
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/bin/Debug/net9.0/Common.Services.pdb
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/bin/Debug/net9.0/UserService.Infrastructure.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Application/bin/Debug/net9.0/UserService.Infrastructure.pdb

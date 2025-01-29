@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UserService.Application.Dtos.Requests;
+using UserService.Application.Features.Commands.ChangeAvatar;
 using UserService.Application.Features.Commands.ChangePassword;
 using UserService.Application.Features.Commands.EditUser;
 using UserService.Application.Features.Queries.GetUser;
@@ -39,5 +40,11 @@ public class ProfileController : ControllerBase
     {
         return Ok(await _mediator.Send(new ChangePasswordCommand(Guid.Parse(User.FindFirst("UserId")!.Value),
             changePasswordDto)));
+    }
+
+    [HttpPut("upload_avatar")]
+    public async Task<IActionResult> UploadAvatar(IFormFile file)
+    {
+        return Ok(await _mediator.Send(new ChangeAvatarCommand(Guid.Parse(User.FindFirst("UserId")!.Value), file)));
     }
 }

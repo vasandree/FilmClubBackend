@@ -10,3 +10,7 @@
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/obj/Debug/net9.0/refint/UserService.Infrastructure.dll
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/obj/Debug/net9.0/UserService.Infrastructure.pdb
 /Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/obj/Debug/net9.0/ref/UserService.Infrastructure.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/obj/Debug/net9.0/UserService.Infrastructure.csproj.AssemblyReference.cache
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/bin/Debug/net9.0/Common.Models.dll
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/bin/Debug/net9.0/Common.Models.pdb
+/Users/andreivasilev/Desktop/projects/FilmClubBackend/UserService.Infrastructure/obj/Debug/net9.0/UserServ.28B62BA0.Up2Date
