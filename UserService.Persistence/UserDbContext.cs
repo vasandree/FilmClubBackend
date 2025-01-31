@@ -23,6 +23,7 @@ public class UserDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Gui
     public DbSet<DiscussionMemberEntity> DiscussionMembers { get; set; }
     public DbSet<RefreshToken> RefreshTokens { get; set; }
     public DbSet<ConfirmCode> ConfirmCodes { get; set; }
+    public DbSet<UserSettings> UserSettings { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -39,7 +40,14 @@ public class UserDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Gui
                 .IsUnique();
         });
 
-
+        modelBuilder.Entity<UserSettings>(entity =>
+        {
+            entity.HasOne(us => us.User)
+                .WithOne(u => u.UserSettings)
+                .HasForeignKey<UserSettings>(us => us.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+        
         modelBuilder.Entity<ApplicationUser>(entity =>
         {
             entity.HasIndex(u => u.Email).IsUnique();

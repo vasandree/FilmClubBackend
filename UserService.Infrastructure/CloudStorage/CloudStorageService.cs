@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Common.Models.Models.Exceptions;

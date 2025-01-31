@@ -23,6 +23,8 @@ public class ApplicationUser : IdentityUser<Guid>
     public AdminEntity? Admin { get; set; }
 
     public ManagerEntity? Manager { get; set; }
+    
+    public UserSettings? UserSettings { get; set; }
 
     public ICollection<GroupAdminEntity>? GroupAdmin { get; set; } = new List<GroupAdminEntity>();
 

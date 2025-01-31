@@ -384,6 +384,25 @@ namespace UserService.Persistence.Migrations
                     b.ToTable("RefreshTokens");
                 });
 
+            modelBuilder.Entity("UserService.Domain.Entities.UserSettings", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("DarkMode")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("OnlyForKids")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("PreferredLanguage")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("UserSettings");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
@@ -545,6 +564,17 @@ namespace UserService.Persistence.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("UserService.Domain.Entities.UserSettings", b =>
+                {
+                    b.HasOne("UserService.Domain.Entities.ApplicationUser", "User")
+                        .WithOne("UserSettings")
+                        .HasForeignKey("UserService.Domain.Entities.UserSettings", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("UserService.Domain.Entities.ApplicationUser", b =>
                 {
                     b.Navigation("Admin");
@@ -564,6 +594,8 @@ namespace UserService.Persistence.Migrations
                     b.Navigation("Manager");
 
                     b.Navigation("RefreshTokens");
+
+                    b.Navigation("UserSettings");
                 });
 #pragma warning restore 612, 618
         }

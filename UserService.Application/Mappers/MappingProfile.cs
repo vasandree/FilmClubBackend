@@ -13,5 +13,6 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.Id, opt => opt.MapFrom(_ => Guid.NewGuid()));
         CreateMap<ApplicationUser, UserDto>();
         CreateMap<EditProfileDto, ApplicationUser>();
+        CreateMap<UserSettings, UserSettingsDto>();
     }
 }
